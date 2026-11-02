@@ -1,0 +1,32 @@
+name: API and container validation
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements-dev.txt
+      - run: python -m pytest -q --junitxml=evidence/ci-tests.xml
+      - run: docker build -t opella-demanda-api:ci .
+      - run: docker run -d --name api -p 127.0.0.1:8080:8080 --read-only --tmpfs /tmp --cap-drop ALL opella-demanda-api:ci
+      - name: Wait for readiness
+        run: |
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8080/health/ready; then exit 0; fi
+            sleep 2
+          done
+          docker logs api
+          exit 1
+      - run: python scripts/smoke.py --output evidence/ci-container-http.json
+      - if: always()
+        run: docker logs api > evidence/ci-container.log 2>&1 || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: integration-evidence
+          path: evidence/
