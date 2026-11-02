@@ -1,0 +1,7 @@
+{
+  "mejora_wape_relativa_minima_15pct": true,
+  "sesgo_absoluto_menor_5pct": false,
+  "datos_reales_validados": false,
+  "piloto_real_completado": false,
+  "despliegue_aprobado": false
+}

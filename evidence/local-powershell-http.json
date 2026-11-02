@@ -1,0 +1,613 @@
+{
+  "utc": "2026-11-02T22:18:50.5384573Z",
+  "base_url": "http://127.0.0.1:8080",
+  "passed": true,
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/health/live",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "response": {
+        "status": "alive"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/health/ready",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "response": {
+        "status": "ready",
+        "model_version": "a6590f63100a"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/v1/model",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "response": {
+        "version": "a6590f63100a",
+        "synthetic": true,
+        "operationally_approved": false,
+        "features": [
+          "log_reciente",
+          "tendencia",
+          "log_anual",
+          "sin_1",
+          "cos_1",
+          "sin_2",
+          "cos_2",
+          "promocion",
+          "log_precio_relativo",
+          "log_escala",
+          "canal_farmacia",
+          "canal_ecommerce",
+          "region_norte",
+          "region_sur",
+          "disponibilidad",
+          "log_oferta_relativa"
+        ],
+        "umbral": 0.28,
+        "acceptance": {
+          "mejora_wape_relativa_minima_15pct": true,
+          "sesgo_absoluto_menor_5pct": false,
+          "datos_reales_validados": false,
+          "piloto_real_completado": false,
+          "despliegue_aprobado": false
+        },
+        "test_metrics": {
+          "modelo": {
+            "n": 1728,
+            "mae": 20.89490599310482,
+            "rmse": 29.443764643472523,
+            "wape": 0.15413024710292939,
+            "sesgo": -0.05482924067141267
+          },
+          "baseline": {
+            "n": 1728,
+            "mae": 32.16493055555556,
+            "rmse": 44.45686241448828,
+            "wape": 0.2372630293820088,
+            "sesgo": -0.05134914773818722
+          },
+          "alerta_modelo": {
+            "vp": 152,
+            "fn": 17,
+            "fp": 22,
+            "vn": 241,
+            "umbral": 0.28,
+            "exactitud": 0.9097222222222222,
+            "precision": 0.8735632183908046,
+            "recall": 0.8994082840236687,
+            "especificidad": 0.9163498098859315,
+            "f1": 0.8862973760932945,
+            "exactitud_balanceada": 0.9078790469548002,
+            "auc": 0.9718316196818684,
+            "brier": 0.07460805728917405,
+            "log_loss": 0.24456735678640704,
+            "prevalencia": 0.3912037037037037,
+            "tasa_alertas": 0.4027777777777778,
+            "costo_proxy": 29900.0
+          },
+          "alerta_baseline": {
+            "vp": 92,
+            "fn": 77,
+            "fp": 16,
+            "vn": 247,
+            "umbral": 0.5,
+            "exactitud": 0.7847222222222222,
+            "precision": 0.8518518518518519,
+            "recall": 0.5443786982248521,
+            "especificidad": 0.9391634980988594,
+            "f1": 0.6642599277978339,
+            "exactitud_balanceada": 0.7417710981618557,
+            "prevalencia": 0.3912037037037037,
+            "tasa_alertas": 0.25,
+            "costo_proxy": 118700.0
+          },
+          "por_horizonte": {
+            "h1": {
+              "n": 432,
+              "mae": 19.849405844693358,
+              "rmse": 28.163596903721928,
+              "wape": 0.15694676266394922,
+              "sesgo": -0.04636879307663152
+            },
+            "h2": {
+              "n": 432,
+              "mae": 20.86851089250014,
+              "rmse": 29.24961811543837,
+              "wape": 0.15794244302738414,
+              "sesgo": -0.05368610371556232
+            },
+            "h3": {
+              "n": 432,
+              "mae": 20.719444822654026,
+              "rmse": 28.622700562827895,
+              "wape": 0.1500352033823886,
+              "sesgo": -0.05490951675399594
+            },
+            "h4": {
+              "n": 432,
+              "mae": 22.142262412571768,
+              "rmse": 31.618883085225924,
+              "wape": 0.1521078994089464,
+              "sesgo": -0.06314118639155215
+            }
+          },
+          "acumulado_4_semanas": {
+            "n": 432,
+            "mae": 40.6394690141315,
+            "rmse": 52.95847317070098,
+            "wape": 0.07494376145251541,
+            "sesgo": -0.05482924067141267
+          }
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/openapi.json",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "response": {
+        "openapi": "3.1.0",
+        "info": {
+          "title": "Opella demanda - demostracion sintetica",
+          "description": "Pronostico de 4 semanas y alerta independiente. Sin aprobacion operativa.",
+          "version": "1.0.0"
+        },
+        "paths": {
+          "/health/live": {
+            "get": {
+              "summary": "Live",
+              "operationId": "live_health_live_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {}
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/health/ready": {
+            "get": {
+              "summary": "Ready",
+              "operationId": "ready_health_ready_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {}
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/v1/model": {
+            "get": {
+              "summary": "Model",
+              "operationId": "model_v1_model_get",
+              "parameters": [
+                {
+                  "name": "x-api-key",
+                  "in": "header",
+                  "required": false,
+                  "schema": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "title": "X-Api-Key"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {}
+                    }
+                  }
+                },
+                "422": {
+                  "description": "Validation Error",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/HTTPValidationError"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/v1/predict": {
+            "post": {
+              "summary": "Predict",
+              "operationId": "predict_v1_predict_post",
+              "parameters": [
+                {
+                  "name": "x-api-key",
+                  "in": "header",
+                  "required": false,
+                  "schema": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "title": "X-Api-Key"
+                  }
+                }
+              ],
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/PredictRequest"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/PredictResponse"
+                      }
+                    }
+                  }
+                },
+                "422": {
+                  "description": "Validation Error",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/HTTPValidationError"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "components": {
+          "schemas": {
+            "Features": {
+              "properties": {
+                "log_reciente": {
+                  "type": "number",
+                  "maximum": 20.0,
+                  "minimum": 0.0,
+                  "title": "Log Reciente"
+                },
+                "tendencia": {
+                  "type": "number",
+                  "maximum": 5.0,
+                  "minimum": -5.0,
+                  "title": "Tendencia"
+                },
+                "log_anual": {
+                  "type": "number",
+                  "maximum": 20.0,
+                  "minimum": 0.0,
+                  "title": "Log Anual"
+                },
+                "sin_1": {
+                  "type": "number",
+                  "maximum": 1.0,
+                  "minimum": -1.0,
+                  "title": "Sin 1"
+                },
+                "cos_1": {
+                  "type": "number",
+                  "maximum": 1.0,
+                  "minimum": -1.0,
+                  "title": "Cos 1"
+                },
+                "sin_2": {
+                  "type": "number",
+                  "maximum": 1.0,
+                  "minimum": -1.0,
+                  "title": "Sin 2"
+                },
+                "cos_2": {
+                  "type": "number",
+                  "maximum": 1.0,
+                  "minimum": -1.0,
+                  "title": "Cos 2"
+                },
+                "promocion": {
+                  "type": "number",
+                  "maximum": 1.0,
+                  "minimum": 0.0,
+                  "title": "Promocion"
+                },
+                "log_precio_relativo": {
+                  "type": "number",
+                  "maximum": 5.0,
+                  "minimum": -5.0,
+                  "title": "Log Precio Relativo"
+                },
+                "log_escala": {
+                  "type": "number",
+                  "maximum": 20.0,
+                  "minimum": 0.0,
+                  "title": "Log Escala"
+                },
+                "canal_farmacia": {
+                  "type": "integer",
+                  "maximum": 1.0,
+                  "minimum": 0.0,
+                  "title": "Canal Farmacia"
+                },
+                "canal_ecommerce": {
+                  "type": "integer",
+                  "maximum": 1.0,
+                  "minimum": 0.0,
+                  "title": "Canal Ecommerce"
+                },
+                "region_norte": {
+                  "type": "integer",
+                  "maximum": 1.0,
+                  "minimum": 0.0,
+                  "title": "Region Norte"
+                },
+                "region_sur": {
+                  "type": "integer",
+                  "maximum": 1.0,
+                  "minimum": 0.0,
+                  "title": "Region Sur"
+                },
+                "disponibilidad": {
+                  "type": "number",
+                  "maximum": 1.0,
+                  "minimum": 0.0,
+                  "title": "Disponibilidad"
+                },
+                "log_oferta_relativa": {
+                  "type": "number",
+                  "maximum": 20.0,
+                  "minimum": -20.0,
+                  "title": "Log Oferta Relativa"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "log_reciente",
+                "tendencia",
+                "log_anual",
+                "sin_1",
+                "cos_1",
+                "sin_2",
+                "cos_2",
+                "promocion",
+                "log_precio_relativo",
+                "log_escala",
+                "canal_farmacia",
+                "canal_ecommerce",
+                "region_norte",
+                "region_sur",
+                "disponibilidad",
+                "log_oferta_relativa"
+              ],
+              "title": "Features"
+            },
+            "HTTPValidationError": {
+              "properties": {
+                "detail": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  },
+                  "type": "array",
+                  "title": "Detail"
+                }
+              },
+              "type": "object",
+              "title": "HTTPValidationError"
+            },
+            "PredictRequest": {
+              "properties": {
+                "instances": {
+                  "items": {
+                    "$ref": "#/components/schemas/Features"
+                  },
+                  "type": "array",
+                  "maxItems": 100,
+                  "minItems": 1,
+                  "title": "Instances"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "instances"
+              ],
+              "title": "PredictRequest"
+            },
+            "PredictResponse": {
+              "properties": {
+                "model_version": {
+                  "type": "string",
+                  "title": "Model Version"
+                },
+                "synthetic": {
+                  "type": "boolean",
+                  "title": "Synthetic"
+                },
+                "operationally_approved": {
+                  "type": "boolean",
+                  "title": "Operationally Approved"
+                },
+                "umbral": {
+                  "type": "number",
+                  "title": "Umbral"
+                },
+                "predictions": {
+                  "items": {
+                    "$ref": "#/components/schemas/Prediction"
+                  },
+                  "type": "array",
+                  "title": "Predictions"
+                }
+              },
+              "type": "object",
+              "required": [
+                "model_version",
+                "synthetic",
+                "operationally_approved",
+                "umbral",
+                "predictions"
+              ],
+              "title": "PredictResponse"
+            },
+            "Prediction": {
+              "properties": {
+                "demanda_semanal": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "type": "array",
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "title": "Demanda Semanal"
+                },
+                "demanda_total_4_semanas": {
+                  "type": "number",
+                  "title": "Demanda Total 4 Semanas"
+                },
+                "probabilidad_faltante": {
+                  "type": "number",
+                  "title": "Probabilidad Faltante"
+                },
+                "alerta": {
+                  "type": "boolean",
+                  "title": "Alerta"
+                }
+              },
+              "type": "object",
+              "required": [
+                "demanda_semanal",
+                "demanda_total_4_semanas",
+                "probabilidad_faltante",
+                "alerta"
+              ],
+              "title": "Prediction"
+            },
+            "ValidationError": {
+              "properties": {
+                "loc": {
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "integer"
+                      }
+                    ]
+                  },
+                  "type": "array",
+                  "title": "Location"
+                },
+                "msg": {
+                  "type": "string",
+                  "title": "Message"
+                },
+                "type": {
+                  "type": "string",
+                  "title": "Error Type"
+                }
+              },
+              "type": "object",
+              "required": [
+                "loc",
+                "msg",
+                "type"
+              ],
+              "title": "ValidationError"
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/v1/predict",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "response": {
+        "model_version": "a6590f63100a",
+        "synthetic": true,
+        "operationally_approved": false,
+        "umbral": 0.28,
+        "predictions": [
+          {
+            "demanda_semanal": [
+              69.0339708254569,
+              68.47844765084395,
+              68.75690831564812,
+              68.84494745924442
+            ],
+            "demanda_total_4_semanas": 275.11427425119336,
+            "probabilidad_faltante": 0.023166333249750596,
+            "alerta": false
+          }
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/v1/predict",
+      "status": 422,
+      "expected": 422,
+      "passed": true,
+      "response": {
+        "detail": [
+          {
+            "type": "too_short",
+            "loc": [
+              "body",
+              "instances"
+            ],
+            "msg": "List should have at least 1 item after validation, not 0",
+            "input": [],
+            "ctx": {
+              "field_type": "List",
+              "min_length": 1,
+              "actual_length": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

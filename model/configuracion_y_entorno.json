@@ -1,0 +1,72 @@
+{
+  "seed": 20261025,
+  "utc": "2026-10-26T02:59:09.906985+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.3.5",
+  "pandas": "3.0.1",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "features": [
+    "log_reciente",
+    "tendencia",
+    "log_anual",
+    "sin_1",
+    "cos_1",
+    "sin_2",
+    "cos_2",
+    "promocion",
+    "log_precio_relativo",
+    "log_escala",
+    "canal_farmacia",
+    "canal_ecommerce",
+    "region_norte",
+    "region_sur",
+    "disponibilidad"
+  ],
+  "risk_features": [
+    "log_reciente",
+    "tendencia",
+    "log_anual",
+    "sin_1",
+    "cos_1",
+    "sin_2",
+    "cos_2",
+    "promocion",
+    "log_precio_relativo",
+    "log_escala",
+    "canal_farmacia",
+    "canal_ecommerce",
+    "region_norte",
+    "region_sur",
+    "disponibilidad",
+    "log_oferta_relativa"
+  ],
+  "ridge_alpha": 10.0,
+  "umbral_final_oof": 0.28,
+  "max_alert_rate_validacion": 0.45,
+  "cost_fn": 1500.0,
+  "cost_fp": 200.0,
+  "n_train_final": 2916,
+  "n_test": 432,
+  "cv_resumen": {
+    "wape_modelo": {
+      "media": 0.17723527928476784,
+      "sd_entre_folds": 0.0341939090168035
+    },
+    "wape_base": {
+      "media": 0.2403302579529975,
+      "sd_entre_folds": 0.015504643034188564
+    },
+    "auc": {
+      "media": 0.956505486314969,
+      "sd_entre_folds": 0.012475296177769768
+    },
+    "recall": {
+      "media": 0.7730575450483917,
+      "sd_entre_folds": 0.20696505799940476
+    }
+  },
+  "logistic_converged": true,
+  "logistic_iterations": 8,
+  "segundos": 1.2463144999928772,
+  "checks": "passed"
+}

@@ -1,0 +1,242 @@
+﻿[
+    {
+        "Id": "002dbbc45c49dd17d3ae1f25a1b22fbac711743fa2f8b4797064a4e975902806",
+        "Created": "2026-11-02T22:20:32.573406378Z",
+        "Path": "python",
+        "Args": [
+            "-m",
+            "app.serve"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 836,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-02T22:20:32.638480552Z",
+            "FinishedAt": "0001-01-01T00:00:00Z",
+            "Health": {
+                "Status": "starting",
+                "FailingStreak": 0,
+                "Log": []
+            }
+        },
+        "Image": "sha256:091ddc30b97b9f08f2197cb23e6a081bbf8aff7c203ccd2092edb817948d6ab7",
+        "ResolvConfPath": "/var/lib/docker/containers/002dbbc45c49dd17d3ae1f25a1b22fbac711743fa2f8b4797064a4e975902806/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/002dbbc45c49dd17d3ae1f25a1b22fbac711743fa2f8b4797064a4e975902806/hostname",
+        "HostsPath": "/var/lib/docker/containers/002dbbc45c49dd17d3ae1f25a1b22fbac711743fa2f8b4797064a4e975902806/hosts",
+        "LogPath": "",
+        "Name": "/opella-demanda-validation",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "local",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "8081"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                11,
+                406
+            ],
+            "CapAdd": null,
+            "CapDrop": [
+                "ALL"
+            ],
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": true,
+            "SecurityOpt": [
+                "no-new-privileges:true"
+            ],
+            "Tmpfs": {
+                "/tmp": ""
+            },
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "002dbbc45c49",
+            "Domainname": "",
+            "User": "10001:10001",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.16",
+                "PYTHON_SHA256=b5796915dc45ff745cfb4e990a7e7c93d6f546328a102ce31448d69ebc37575c",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1",
+                "PORT=8080",
+                "MODEL_DIR=/app/model"
+            ],
+            "Cmd": [
+                "python",
+                "-m",
+                "app.serve"
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "python -c \"import os,urllib.request; urllib.request.urlopen('http://127.0.0.1:'+os.getenv('PORT','8080')+'/health/ready',timeout=2)\""
+                ],
+                "Interval": 30000000000,
+                "Timeout": 3000000000,
+                "StartPeriod": 20000000000,
+                "Retries": 3
+            },
+            "Image": "opella-demanda-api:1.0.0",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "SandboxID": "cd3331b13983b1a90474762ace2d31880a3562c60b1a1f70fde0451c0edb2471",
+            "SandboxKey": "/var/run/docker/netns/cd3331b13983",
+            "Ports": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "8081"
+                    }
+                ]
+            },
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "2ac16659199170afb4066414ed95c81e2cca746dcb2bac86bc8eb6f2f0295ce2",
+                    "EndpointID": "79963cbf6d60800089d148744e0ee8bdcfb5bee7703eebca90112c541e1be543",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "MacAddress": "3a:90:b2:3b:c4:d2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:f59adda3fe7a38be6c44f690c92b1ef933a54adc637b4f99a5a4f40a5eb67cb3",
+            "size": 2194,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

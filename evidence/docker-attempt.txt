@@ -1,0 +1,9 @@
+Client:
+ Version:           29.9.2
+ API version:       1.56
+ Go version:        go1.26.10
+ Git commit:        a82e528
+ Built:             Tue Oct 20 19:44:07 2026
+ OS/Arch:           windows/amd64
+ Context:           desktop-linux
+permission denied while trying to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine

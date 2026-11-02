@@ -1,0 +1,81 @@
+﻿[
+    {
+        "Id": "sha256:091ddc30b97b9f08f2197cb23e6a081bbf8aff7c203ccd2092edb817948d6ab7",
+        "RepoTags": [
+            "opella-demanda-api:1.0.0"
+        ],
+        "RepoDigests": [
+            "opella-demanda-api@sha256:091ddc30b97b9f08f2197cb23e6a081bbf8aff7c203ccd2092edb817948d6ab7"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-02T22:15:23.853430812Z",
+        "Config": {
+            "User": "10001:10001",
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.16",
+                "PYTHON_SHA256=b5796915dc45ff745cfb4e990a7e7c93d6f546328a102ce31448d69ebc37575c",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1",
+                "PORT=8080",
+                "MODEL_DIR=/app/model"
+            ],
+            "Cmd": [
+                "python",
+                "-m",
+                "app.serve"
+            ],
+            "WorkingDir": "/app",
+            "ArgsEscaped": true,
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "python -c \"import os,urllib.request; urllib.request.urlopen('http://127.0.0.1:'+os.getenv('PORT','8080')+'/health/ready',timeout=2)\""
+                ],
+                "Interval": 30000000000,
+                "Timeout": 3000000000,
+                "StartPeriod": 20000000000,
+                "Retries": 3
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 332877708,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:a5d6d345f6afa08d7c31272055746d60a838b290bfcc82c0a23e8e984d61a933",
+                "sha256:fab99bd4639aec48a77ec4d2e3564c0907e0e1e962bbf773219a0b503a168955",
+                "sha256:bca572b9549074f7cbc5f2d9d29f589038ff21c5f68cef2965167a33f177a9c0",
+                "sha256:cae4cb2b5e819765b847e67faa443b377607452f2ec949d142cad15d9d7ea0b3",
+                "sha256:f6ebe7e14f5aa87e4de214e2c4e63102b2bad940b681a17542361e6a4db7920f",
+                "sha256:a85c4665003d41967f9cb38a8b5788178aac55aa0e4ef59cc661cc804876892c",
+                "sha256:61da8f3095799bf26a29bd6847422e66a3e3a95e29b74f292fe6ddc46bb31606",
+                "sha256:b1555c7dd964750f8a74a5ece4d75ed9ada306432d9f86a193fd187ed971c7a2",
+                "sha256:f20ea1be6ba3ca1c4a5d04119332e5dd92a2812d3a5729f938890301c9f881e4",
+                "sha256:487797eb668b502363efea21b1f5615e2541aa017f575586ab5d67b79fac557b"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-02T22:20:32.392040207Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:091ddc30b97b9f08f2197cb23e6a081bbf8aff7c203ccd2092edb817948d6ab7",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "26og09c0cq5402ix05jzfbjeh",
+                    "CreatedAt": "2026-11-02T22:20:32.400847479Z"
+                }
+            ]
+        }
+    }
+]

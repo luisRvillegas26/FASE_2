@@ -1,0 +1,12 @@
+﻿INFO:     172.17.0.1:42638 - "GET /health/ready HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42640 - "GET /health/live HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42640 - "GET /health/ready HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42640 - "GET /v1/model HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42640 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42640 - "POST /v1/predict HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42640 - "POST /v1/predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Model loaded version=a6590f63100a synthetic=true
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)

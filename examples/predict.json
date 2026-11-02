@@ -1,0 +1,22 @@
+{
+  "instances": [
+    {
+      "log_reciente": 4.244917420701475,
+      "tendencia": -0.14333976372304263,
+      "log_anual": 4.307437777682809,
+      "sin_1": -0.9981755542233176,
+      "cos_1": 0.06037849742228422,
+      "sin_2": -0.12053668025531941,
+      "cos_2": -0.9927088740980544,
+      "promocion": 0.25,
+      "log_precio_relativo": -0.05486333370703424,
+      "log_escala": 4.442651256490317,
+      "canal_farmacia": 1,
+      "canal_ecommerce": 0,
+      "region_norte": 1,
+      "region_sur": 0,
+      "disponibilidad": 1.0,
+      "log_oferta_relativa": 0.21515635114807516
+    }
+  ]
+}
